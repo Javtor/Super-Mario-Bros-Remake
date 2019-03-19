@@ -9,27 +9,26 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 public abstract class Sprite {
-	
+
 	protected double x;
 	protected double y;
 	protected double width;
 	protected double height;
 	protected String imageUrl;
 	protected BufferedImage img;
-	
+
 	protected double sX;
 	protected double sY;
-	
-	
+
 	public Sprite(double x, double y, double width, double height, BufferedImage image) throws IOException {
 		super();
 		this.x = x;
 		this.y = y;
 		this.width = width;
 		this.height = height;
-		
+
 		File file = new File(this.imageUrl);
-		
+
 	}
 
 	public double getX() {
@@ -63,7 +62,7 @@ public abstract class Sprite {
 	public void setHeight(double height) {
 		this.height = height;
 	}
-	
+
 	public BufferedImage getImg() {
 		return img;
 	}
@@ -72,7 +71,8 @@ public abstract class Sprite {
 		this.img = img;
 	}
 
-	public void render(Graphics g) throws IOException {
-		g.drawImage(img, (int)(x-Game.sX), (int)(y-Game.sY), null);
+	public void render(Graphics g, int sx1, int sy1) throws IOException {
+		g.drawImage(img, (int) (x - Game.sX), (int) (y - Game.sY), (int) (x + width - Game.sX),
+				(int) (y + height - Game.sY), sx1, sy1, (int) (sx1 + width), (int) (sy1 + height), null);
 	}
 }
