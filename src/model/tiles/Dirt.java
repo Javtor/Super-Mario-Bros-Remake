@@ -1,4 +1,4 @@
-package model.blocks;
+package model.tiles;
 
 import java.io.IOException;
 

@@ -6,7 +6,9 @@ import java.awt.Graphics;
 import java.io.File;
 import java.io.IOException;
 
-public abstract class Block extends Sprite {
+import com.sun.javafx.scene.control.skin.TitledPaneSkin;
+
+public class Block extends Sprite {
 
 	public static int BLOCK_SIZE = 16;
 
@@ -15,8 +17,8 @@ public abstract class Block extends Sprite {
 	protected int id;
 	protected boolean solid;
 
-	public Block(int x, int y, String imageUrl, int id) throws IOException {
-		super(x, y, BLOCK_SIZE, BLOCK_SIZE, BASE_URL+imageUrl);
+	public Block(int x, int y, int id) throws IOException {
+		super(x, y, BLOCK_SIZE, BLOCK_SIZE, Game.tileset);
 		solid = true;
 		// TODO Auto-generated constructor stub
 	}

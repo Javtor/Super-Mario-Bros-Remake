@@ -2,7 +2,11 @@ package model;
 
 import java.awt.Graphics;
 import java.awt.event.KeyEvent;
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
+
+import javax.imageio.ImageIO;
 
 public class Game {
 	
@@ -23,6 +27,8 @@ public class Game {
 	private Level world;
 	private Character character;
 	
+	public static BufferedImage tileset;
+	
 	public static double sX;
 	public static double sY;
 	
@@ -32,6 +38,7 @@ public class Game {
 	
 	public void init() throws IOException
 	{
+		tileset = ImageIO.read(new File("res"+File.separator+"tileset.png"));
 		running = true;
 		testNumb = 0;		
 		world = new Level();

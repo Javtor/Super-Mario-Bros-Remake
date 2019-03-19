@@ -11,7 +11,7 @@ import threads.Render;
 
 public class Window extends JFrame{
 	
-	public static final String TITLE = "Maincra 2D";
+	public static final String TITLE = "Super Mario Bros.";
 	
 	private GamePanel gamePanel;
 	private Game game;

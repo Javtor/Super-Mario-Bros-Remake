@@ -50,8 +50,7 @@ public class GamePanel extends JPanel implements KeyListener, MouseListener {
 	public void drawGame() {
 		Graphics2D g = (Graphics2D)screen.getGraphics();
 		g.setRenderingHint ( RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON );
-		g.setColor(new Color(186, 214, 254));
-		g.fillRect(0, 0, screen.getWidth(null), screen.getHeight(null));
+		
 		mainWindow.render(g);
 
 		g = (Graphics2D)getGraphics();
